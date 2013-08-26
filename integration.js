@@ -34,7 +34,7 @@
 		Nuvola.onMessageReceived = Nuvola.bind(this, this.messageHandler);
 		
 		/* For debug output */
-		this.name = "Happy Songs";
+		this.name = "Superplayer";
 		
 		/* Let's run */
 		this.state = Nuvola.STATE_NONE;
@@ -63,9 +63,37 @@
 		
 		
 		// Retrieve song details here
-		song = "Hello baby!";
-		artist = "Jiří Janoušek";
-		album = "Best of";
+		try
+		{
+			song = document.querySelector('#controls-area-track>span[data-function~="current-track"]').
+				firstChild.nodeValue;
+		}
+		catch(e)
+		{
+			song = null;
+		}
+
+		try
+		{
+			artist = document.querySelector('#controls-area-track>span[data-function~="current-artist"]').
+				firstChild.nodeValue;
+		}
+		catch(e)
+		{
+			artist = null;
+		}
+
+		try
+		{
+			album = document.querySelector('.controls-area-tag span').firstChild.nodeValue;
+		}
+		catch(e)
+		{
+			album = null;
+		}
+
+		
+
 		state = Nuvola.STATE_PLAYING;
 		can_thumbs_up = true;
 		can_thumbs_down = true;
