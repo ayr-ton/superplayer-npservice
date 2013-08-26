@@ -92,8 +92,6 @@
 			album = null;
 		}
 
-		
-
 		state = Nuvola.STATE_PLAYING;
 		can_thumbs_up = true;
 		can_thumbs_down = true;
@@ -143,25 +141,28 @@
 			{
 			case Nuvola.ACTION_PLAY:
 				if (this.state != Nuvola.STATE_PLAYING)
-					alert("Play!");
+					$('.controls-area-button[data-function~="play"]').click();
 				break;
 			case Nuvola.ACTION_PAUSE:
-				alert("Play!");
+				console.log("pause");
+				$('.controls-area-button[data-function~="play"]').click();
 				break;
 			case Nuvola.ACTION_TOGGLE_PLAY:
-				alert("Toggle!");
+				console.log("play");
+				$('.controls-area-button[data-function~="play"]').click();
 				break;
 			case Nuvola.ACTION_PREV_SONG:
-				alert("Previous song!");
+				console.log("Previous song!");
 				break;
 			case Nuvola.ACTION_NEXT_SONG:
-				alert("Next song!");
+				console.log("next");
+				$('.controls-area-button[data-function~="next"]').click();
 				break;
 			case Nuvola.ACTION_THUMBS_UP:
-				alert("Thumbs up!");
+				console.log("Thumbs up!");
 				break;
 			case Nuvola.ACTION_THUMBS_DOWN:
-				alert("Thumbs down!");
+				console.log("Thumbs down!");
 				break;
 			default:
 				// Other commands are not supported
